@@ -2,6 +2,7 @@
 
 
 @section('content')
+
     <div id="inner_banner" class="section inner_banner_section">
         <div class="container">
             <div class="row">
@@ -9,10 +10,10 @@
                     <div class="full">
                         <div class="title-holder">
                             <div class="title-holder-cell text-left">
-                                <h1 class="page-title">Data Recovery</h1>
+                                <h1 class="page-title">Computer Repair</h1>
                                 <ol class="breadcrumb">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li class="active">Data Recovery</li>
+                                    <li><a href="{{url('/')}}">Home</a></li>
+                                    <li class="active">Computer Repair</li>
                                 </ol>
                             </div>
                         </div>
@@ -31,7 +32,6 @@
                         <div class="col-md-12">
                             <div class="full margin_bottom_30">
                                 <div class="accordion border_circle">
-
                                 </div>
                             </div>
                         </div>
@@ -64,24 +64,18 @@
                         </div>
                         <div class="col-md-12">
                             <div class="full" style="margin-top: 15px;">
-                                <h3>Need file recovery?</h3>
+                                <h3>Need Computer Repair?</h3>
                                 <p><a class="btn main_bt" href="{{route('contact')}}">Get a Quote Now!</a></p>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
                 <div class="col-md-3">
                     <div class="side_bar">
                         <div class="side_bar_blog">
-
-                            </div>
-                        </div>
-                        <div class="side_bar_blog">
                             <h4>GET A QUOTE</h4>
                             <p>An duo lorem altera gloriatur. No imperdiet adver sarium pro. No sit sumo lorem. Mei ea eius elitr consequ unturimperdiet.</p>
-                            <a class="btn sqaure_bt" href="{{route('contact')}}">View Service</a> </div>
+                            <a class="btn sqaure_bt" href="{{route('service')}}">View Service</a> </div>
                         <div class="side_bar_blog">
                             <h4>OUR SERVICE</h4>
                             <div class="categary">
@@ -92,11 +86,9 @@
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection

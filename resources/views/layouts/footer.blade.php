@@ -44,16 +44,6 @@
                         <p>456 Rizal Avenue,<br>
                             Ermita, Manila<br>
                             <span style="font-size:18px;"><a href="tel:+6321234567">+63 2 1234 567</a></span></p>
-                        <div class="footer_mail-section">
-                            <form>
-                                <fieldset>
-                                    <div class="field">
-                                        <input placeholder="Email" type="text">
-                                        <button class="button_custom"><i class="fa fa-envelope" aria-hidden="true"></i></button>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>

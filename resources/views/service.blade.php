@@ -31,7 +31,7 @@
                         <div class="service_cont">
                             <h3 class="service_head">Data Recovery</h3>
                             <p>At Fix It, we specialize in recovering lost data from a variety of devices to ensure your important files are safe.</p>
-                            <div class="bt_cont"> <a class="btn sqaure_bt" href="it_service_detail.html">View Service</a> </div>
+                            <div class="bt_cont"> <a class="btn sqaure_bt" href="{{route('data')}}">View Service</a> </div>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                         <div class="service_cont">
                             <h3 class="service_head">Computer Repair</h3>
                             <p>Fix It provides comprehensive computer repair services to get your devices up and running smoothly again.</p>
-                            <div class="bt_cont"> <a class="btn sqaure_bt" href="it_service_detail.html">View Service</a> </div>
+                            <div class="bt_cont"> <a class="btn sqaure_bt" href="{{route('computer-repair')}}">View Service</a> </div>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                         <div class="service_cont">
                             <h3 class="service_head">Network Solutions</h3>
                             <p>Our network solutions at Fix It ensure that you have a reliable and efficient network setup for your home or business.</p>
-                            <div class="bt_cont"> <a class="btn sqaure_bt" href="it_service_detail.html">View Service</a> </div>
+                            <div class="bt_cont"> <a class="btn sqaure_bt" href="{{route('network-solution')}}">View Service</a> </div>
                         </div>
                     </div>
                 </div>
