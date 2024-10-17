@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>It.Next - IT Service Responsive Html Theme</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -38,7 +39,7 @@
 </head>
 <body id="default_theme" class="it_service">
 <!-- loader -->
-<div class="bg_load"> <img class="loader_animation" src="images/loaders/loader_1.png" alt="#" /> </div>
+<div class="bg_load"> <img class="loader_animation" src="{{asset('images/fevicon/fevicon.png')}}" alt="#" /> </div>
 <!-- end loader -->
 <!-- header -->
 @include('layouts.menu')
@@ -486,70 +487,70 @@
 </div>
 
 
-<div class="section padding_layout_1 testmonial_section white_fonts">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="full">
-                    <div class="main_heading text_align_left">
-                        <h2 style="text-transform: none;">What Clients Say?</h2>
-                        <p class="large">Here are testimonials from clients..</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-7">
-                <div class="full">
-                    <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ul class="carousel-indicators">
-                            <li data-target="#testimonial_slider" data-slide-to="0" class="active"></li>
-                            <li data-target="#testimonial_slider" data-slide-to="1"></li>
-                            <li data-target="#testimonial_slider" data-slide-to="2"></li>
-                        </ul>
-                        <!-- The slideshow -->
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="testimonial-container">
-                                    <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first.
-                                        I am really satisfied with my first laptop service. </div>
-                                    <div class="testimonial-photo"> <img src="images/it_service/client1.jpg" class="img-responsive" alt="#" width="150" height="150"> </div>
-                                    <div class="testimonial-meta">
-                                        <h4>Maria Anderson</h4>
-                                        <span class="testimonial-position">CFO, Tech NY</span> </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testimonial-container">
-                                    <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first.
-                                        I am really satisfied with my first laptop service. </div>
-                                    <div class="testimonial-photo"> <img src="images/it_service/client2.jpg" class="img-responsive" alt="#" width="150" height="150"> </div>
-                                    <div class="testimonial-meta">
-                                        <h4>Maria Anderson</h4>
-                                        <span class="testimonial-position">CFO, Tech NY</span> </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testimonial-container">
-                                    <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first.
-                                        I am really satisfied with my first laptop service. </div>
-                                    <div class="testimonial-photo"> <img src="images/it_service/client3.jpg" class="img-responsive" alt="#" width="150" height="150"> </div>
-                                    <div class="testimonial-meta">
-                                        <h4>Maria Anderson</h4>
-                                        <span class="testimonial-position">CFO, Tech NY</span> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-5">
-                <div class="full"> </div>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div class="section padding_layout_1 testmonial_section white_fonts">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12">--}}
+{{--                <div class="full">--}}
+{{--                    <div class="main_heading text_align_left">--}}
+{{--                        <h2 style="text-transform: none;">What Clients Say?</h2>--}}
+{{--                        <p class="large">Here are testimonials from clients..</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-sm-7">--}}
+{{--                <div class="full">--}}
+{{--                    <div id="testimonial_slider" class="carousel slide" data-ride="carousel">--}}
+{{--                        <!-- Indicators -->--}}
+{{--                        <ul class="carousel-indicators">--}}
+{{--                            <li data-target="#testimonial_slider" data-slide-to="0" class="active"></li>--}}
+{{--                            <li data-target="#testimonial_slider" data-slide-to="1"></li>--}}
+{{--                            <li data-target="#testimonial_slider" data-slide-to="2"></li>--}}
+{{--                        </ul>--}}
+{{--                        <!-- The slideshow -->--}}
+{{--                        <div class="carousel-inner">--}}
+{{--                            <div class="carousel-item active">--}}
+{{--                                <div class="testimonial-container">--}}
+{{--                                    <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first.--}}
+{{--                                        I am really satisfied with my first laptop service. </div>--}}
+{{--                                    <div class="testimonial-photo"> <img src="images/it_service/client1.jpg" class="img-responsive" alt="#" width="150" height="150"> </div>--}}
+{{--                                    <div class="testimonial-meta">--}}
+{{--                                        <h4>Maria Anderson</h4>--}}
+{{--                                        <span class="testimonial-position">CFO, Tech NY</span> </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="carousel-item">--}}
+{{--                                <div class="testimonial-container">--}}
+{{--                                    <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first.--}}
+{{--                                        I am really satisfied with my first laptop service. </div>--}}
+{{--                                    <div class="testimonial-photo"> <img src="images/it_service/client2.jpg" class="img-responsive" alt="#" width="150" height="150"> </div>--}}
+{{--                                    <div class="testimonial-meta">--}}
+{{--                                        <h4>Maria Anderson</h4>--}}
+{{--                                        <span class="testimonial-position">CFO, Tech NY</span> </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="carousel-item">--}}
+{{--                                <div class="testimonial-container">--}}
+{{--                                    <div class="testimonial-content"> You guys rock! Thank you for making it painless, pleasant and most of all hassle free! I wish I would have thought of it first.--}}
+{{--                                        I am really satisfied with my first laptop service. </div>--}}
+{{--                                    <div class="testimonial-photo"> <img src="images/it_service/client3.jpg" class="img-responsive" alt="#" width="150" height="150"> </div>--}}
+{{--                                    <div class="testimonial-meta">--}}
+{{--                                        <h4>Maria Anderson</h4>--}}
+{{--                                        <span class="testimonial-position">CFO, Tech NY</span> </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-sm-5">--}}
+{{--                <div class="full"> </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 <!-- end section -->
 <!-- section -->
 
@@ -627,12 +628,11 @@
 
 <!-- map js -->
 <script>
-    // This example adds a marker to indicate the position of Bondi Beach in Sydney,
-    // Australia.
+    // This example adds a marker to indicate the position of Rizal Park in Manila, Philippines.
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 11,
-            center: {lat: 40.645037, lng: -73.880224},
+            zoom: 14,
+            center: {lat: 14.582598, lng: 120.979366}, // Coordinates of Rizal Park, Manila
             styles: [
                 {
                     elementType: 'geometry',
@@ -725,14 +725,15 @@
 
         var image = 'images/it_service/location_icon_map_cont.png';
         var beachMarker = new google.maps.Marker({
-            position: {lat: 40.645037, lng: -73.880224},
+            position: {lat: 14.582598, lng: 120.979366}, // Marker at Rizal Park, Manila
             map: map,
             icon: image
         });
     }
 </script>
 <!-- google map js -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANsQP_vy2AbZzn40IKLMmq8SgZLgfBzJY&callback=initMap"></script>
 <!-- end google map js -->
+
 </body>
 </html>
