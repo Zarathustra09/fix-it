@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminAppointmentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,6 +16,9 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+
+Route::get('admin/appointment', [AdminAppointmentController::class, 'index'])->name('admin.appointment');
 
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
 
