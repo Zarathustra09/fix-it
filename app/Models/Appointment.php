@@ -9,34 +9,30 @@ class Appointment extends Model
 {
     use HasFactory;
 
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
     protected $table = 'appointments';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
+        'user_id',
         'first_name',
         'last_name',
         'email',
         'phone_number',
         'subject',
         'description',
+        'status',
+        'price',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'created_at',
         'updated_at',
     ];
+
+    /**
+     * Get the user that owns the appointment.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

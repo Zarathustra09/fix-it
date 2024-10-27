@@ -38,7 +38,7 @@
                     </div>
                     <div class="float-right">
                         <div class="make_appo">
-                            <a class="btn white_btn" href="make_appointment.html">Make Appointment</a>
+                            <a class="btn white_btn" href="{{route('contact')}}">Make Appointment</a>
                         </div>
                     </div>
                 </div>
@@ -71,12 +71,27 @@
                                 <li>
                                     <a class="{{ Request::is('service') ? 'active' : '' }}" href="{{ route('service') }}">Services</a>
                                 </li>
-                                <li>
-                                    <a class="{{ Request::is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
-                                </li>
-
-
-
+                                @if(Auth::check())
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{route('guest.index')}}">Appointments</a></li>
+                                            <li><a href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                    Logout
+                                                </a></li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </ul>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a class="{{ Request::is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
                         <div class="search_icon">

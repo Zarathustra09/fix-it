@@ -11,13 +11,17 @@ use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
-    public function  index()
+    public function index()
     {
         return view('contact');
     }
 
     public function store(Request $request)
     {
+        if (!auth()->check()) {
+            return redirect()->route('login')->with('message', 'You need to login first to create an appointment.');
+        }
+
         $validator = Validator::make($request->all(), [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -31,7 +35,16 @@ class ContactController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $appointment = Appointment::create($request->all());
+        $appointment = Appointment::create([
+            'user_id' => auth()->id(),
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'subject' => $request->subject,
+            'description' => $request->description,
+            'status' => 'PENDING', // Default status
+        ]);
 
         // Send confirmation email to the user
         Mail::to($appointment->email)->send(new AppointmentConfirmation($appointment));

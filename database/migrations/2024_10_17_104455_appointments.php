@@ -6,28 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('first_name');
             $table->string('last_name')->nullable();
             $table->string('email');
             $table->string('phone_number');
             $table->string('subject');
             $table->text('description');
-            $table->timestamps(); // To store created_at and updated_at
+            $table->string('status')->default('PENDING');
+            $table->decimal('price', 8, 2)->default(0); // Add the price field
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
-        //
+        Schema::dropIfExists('appointments');
     }
 };
