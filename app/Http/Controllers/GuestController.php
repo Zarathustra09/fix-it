@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CancelledAppointment;
+use App\Mail\PaidAppointment;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class GuestController extends Controller
 {
@@ -21,6 +24,9 @@ class GuestController extends Controller
         $appointment = Appointment::where('user_id', Auth::id())->findOrFail($id);
         $appointment->update(['status' => 'CANCELLED']);
 
+        // Send the cancellation email
+        Mail::to($appointment->email)->send(new CancelledAppointment($appointment));
+
         return response()->json(['success' => 'Appointment cancelled successfully.']);
     }
 
@@ -28,6 +34,9 @@ class GuestController extends Controller
     {
         $appointment = Appointment::where('user_id', Auth::id())->findOrFail($id);
         $appointment->update(['status' => 'PAID']);
+
+        // Send the payment email
+        Mail::to($appointment->email)->send(new PaidAppointment($appointment));
 
         return response()->json(['success' => 'Appointment paid successfully.']);
     }
